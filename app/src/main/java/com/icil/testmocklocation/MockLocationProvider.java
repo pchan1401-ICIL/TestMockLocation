@@ -18,14 +18,14 @@ class MockLocationProvider {
     Context mctx;
 
     public MockLocationProvider(String name, Context ctx) {
-        providerName = LocationManager.GPS_PROVIDER;
+        providerName = name;
         mctx = ctx;
 
         LocationManager lm = (LocationManager) ctx.getSystemService(
                 Context.LOCATION_SERVICE);
         lm.addTestProvider(providerName, true, true, true, true, true,
                 true, true, Criteria.NO_REQUIREMENT, Criteria.ACCURACY_FINE);
-        lm.setTestProviderEnabled(name, true);
+        lm.setTestProviderEnabled(providerName, true);
     }
 
     public void pushLocation(double lat, double lon, double alt) {
