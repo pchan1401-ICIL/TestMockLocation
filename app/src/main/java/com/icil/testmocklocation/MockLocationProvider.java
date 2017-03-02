@@ -13,7 +13,7 @@ import android.os.SystemClock;
  * Web : http://myandroidarchive.tistory.com
  */
 
-public class MockLocationProvider {
+class MockLocationProvider {
     String providerName;
     Context mctx;
 
@@ -25,7 +25,7 @@ public class MockLocationProvider {
                 Context.LOCATION_SERVICE);
         lm.addTestProvider(providerName, true, true, true, true, true,
                 true, true, Criteria.NO_REQUIREMENT, Criteria.ACCURACY_FINE);
-        lm.setTestProviderEnabled(providerName, true);
+        lm.setTestProviderEnabled(name, true);
     }
 
     public void pushLocation(double lat, double lon, double alt) {
